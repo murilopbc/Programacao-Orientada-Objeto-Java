@@ -16,7 +16,7 @@ public class Usuario {
     }
 
     void concederAcessos() {
-        System.out.printf("Usuário %s está com acessos regulares", this.nome);
+        System.out.printf("Usuário %s está com acessos regulares\n", this.nome);
     }
 
 }
