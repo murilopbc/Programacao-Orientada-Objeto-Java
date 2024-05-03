@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/enumeracao/enumeracao.iml" filepath="$PROJECT_DIR$/enumeracao/enumeracao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heranca-java/heranca-java.iml" filepath="$PROJECT_DIR$/heranca-java/heranca-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java-poo.iml" filepath="$PROJECT_DIR$/.idea/java-poo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sobrescrita/sobrescrita.iml" filepath="$PROJECT_DIR$/sobrescrita/sobrescrita.iml" />
+    </modules>
+  </component>
+</project>
