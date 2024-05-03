@@ -5,4 +5,9 @@ public class Maria {
     String facoDentroDeCasa = "Ronco durante o sono";
     protected String familiaSabe = "Maria deve no banco";
     public String todoMundoSabe = "Vou no Bar";
+
+    void Teste(){
+        System.out.println(segredo);
+    }
+
 }
