@@ -1,6 +1,15 @@
 public class Resultado {
 
-    public double mediaFinal(){
-        return mediaFinal();
+    public StringBuilder mediaFinal(double media){
+        StringBuilder sb = new StringBuilder();
+        if (media >= 7){
+            sb.append("Aprovado, ");
+        }else {
+            sb.append("Reprovado, ");
+        }
+        sb.append("Media Final: ");
+        sb.append(media);
+        return sb;
+
     }
 }
