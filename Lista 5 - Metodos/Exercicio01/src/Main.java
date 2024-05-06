@@ -8,7 +8,7 @@ public class Main {
 
         double nota1, nota2, peso1, peso2;
 
-        // Loop para entrada da primeira nota
+
         while (true){
             try {
                 System.out.println("Digite a nota 1: ");
@@ -28,7 +28,7 @@ public class Main {
 
         }
 
-        // Loop para entrada da segunda nota
+
         while (true){
             try {
                 System.out.println("Digite a nota 2: ");
@@ -61,28 +61,26 @@ public class Main {
                 break;
             } catch (InputMismatchException e){
                 System.err.println("Valor Inválido");
-                sc.next(); // Limpa o buffer
+                sc.next();
             }
         }
 
 
-        // Se a opção for média ponderada, solicita os pesos
         if (opt == 2){
             System.out.println("Digite o peso 1: ");
             peso1 = sc.nextDouble();
             System.out.println("Digite o peso 2: ");
             peso2 = sc.nextDouble();
-            // Calcula e exibe a média com base na opção escolhida
+
             Calculo calc = new Calculo();
             Resultado resultado = new Resultado();
-            double mediaPonderada = calc.calcularMediaPonderada(nota1, nota2, peso1, peso2);
-            System.out.println("Média Ponderada: " + resultado.mediaFinal(mediaPonderada));
+            System.out.println("Média Ponderada: " + resultado.mostrarResultado(calc.calcularMediaPonderada(nota1,nota2,peso1,peso2)));
         }
         else {
             Calculo calc = new Calculo();
             calc.calcularMediaAritmetica(nota1, nota2);
             Resultado resultado = new Resultado();
-            System.out.println(resultado.mediaFinal(calc.calcularMediaAritmetica(nota1, nota2)));
+            System.out.println(resultado.mostrarResultado(calc.calcularMediaAritmetica(nota1, nota2)));
         }
 
 

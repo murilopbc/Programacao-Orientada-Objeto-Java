@@ -1,15 +1,14 @@
 public class Resultado {
 
-    public StringBuilder mediaFinal(double media){
-        StringBuilder sb = new StringBuilder();
+
+
+    public void mostrarResultado(double media){
+        System.out.println("Sua média final é: "+ media);
         if (media >= 7){
-            sb.append("Aprovado, ");
+            System.out.println("Aprovado");
         }else {
-            sb.append("Reprovado, ");
+            System.out.println("Reprovado");
         }
-        sb.append("Media Final: ");
-        sb.append(media);
-        return sb;
 
     }
 }
