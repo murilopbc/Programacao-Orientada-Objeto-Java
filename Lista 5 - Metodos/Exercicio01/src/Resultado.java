@@ -1,12 +1,12 @@
 public class Resultado {
 
-    public double mostrarResultado(double media){
+    public static void mostrarResultado(double media) {
 
-        if (media >= 7){
+        if (media >= 7) {
             System.out.println("Aprovado");
-        }else {
+        } else {
             System.out.println("Reprovado");
         }
-        return media;
+
     }
 }

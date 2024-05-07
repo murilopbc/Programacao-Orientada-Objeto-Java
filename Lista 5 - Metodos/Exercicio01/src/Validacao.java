@@ -1,11 +1,23 @@
 public class Validacao {
 
 
-    public Boolean validarNota1(double nota1){
-        return nota1 >= 0 && nota1 <= 10;
+    public static boolean validarNota(double nota) {
+        return nota >= 0 && nota <= 10;
     }
 
-    public Boolean validarNota2(double nota2){
-        return nota2 >= 0 && nota2 <= 10;
+    public static boolean validarNotas(double nota1, double nota2) {
+        return validarNota(nota1) && validarNota(nota2);
     }
+
+    public static boolean validarPeso(double peso) {
+        return peso >= 0 && peso <= 10;
+    }
+
+    public static boolean validarPesos(double peso1, double peso2) {
+        return validarPeso(peso1) && validarPeso(peso2);
+    }
+
 }
+
+
+

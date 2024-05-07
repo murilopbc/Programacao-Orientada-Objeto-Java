@@ -13,9 +13,9 @@ public class Main {
             try {
                 System.out.println("Digite a nota 1: ");
                 nota1 = sc.nextDouble();
-                Validacao validacao = new Validacao();
-                if (!validacao.validarNota1(nota1)) {
-                    System.out.println("Nota 1 Inválida");
+
+                if (!Validacao.validarNota(nota1)) {
+                    System.err.println("Nota 1 Inválida");
                     continue;
                 }
                 break;
@@ -28,14 +28,12 @@ public class Main {
 
         }
 
-
         while (true) {
             try {
                 System.out.println("Digite a nota 2: ");
                 nota2 = sc.nextDouble();
-                Validacao validacao = new Validacao();
-                if (!validacao.validarNota2(nota2)) {
-                    System.out.println("Nota 2 Inválida");
+                if (!Validacao.validarNota(nota2)) {
+                    System.err.println("Nota 2 Inválida");
                     continue;
                 }
                 break;
@@ -54,7 +52,7 @@ public class Main {
                 System.out.println("1-Calcular média aritmética\n2-Calcular média ponderada");
                 opt = sc.nextInt();
                 if (opt < 1 || opt > 2) {
-                    System.err.println("Opção Inválida");
+                    System.err.println("Opção Inválida. Digite 1 ou 2!");
                     continue;
                 }
                 break;
@@ -65,16 +63,21 @@ public class Main {
         }
 
         if (opt == 1) {
-            Calculo calc = new Calculo();
-            calc.calcularMediaAritmetica(nota1, nota2);
-            Resultado resultado = new Resultado();
-            System.out.println("Média " + resultado.mostrarResultado(calc.calcularMediaAritmetica(nota1, nota2)));
+
+            double mediaAritmetica = Calculo.calcularMediaAritmetica(nota1, nota2);
+            Resultado.mostrarResultado(mediaAritmetica);
+            EntradaSaida.mostrarMedia(mediaAritmetica);
+
 
         } else {
             while (true) {
                 try {
                     System.out.println("Digite o peso 1: ");
                     peso1 = sc.nextDouble();
+                    if (!Validacao.validarPeso(peso1)) {
+                        System.err.println("Digite um valor maior que 0");
+                        continue;
+                    }
                     break;
 
 
@@ -87,6 +90,9 @@ public class Main {
                 try {
                     System.out.println("Digite o peso 2: ");
                     peso2 = sc.nextDouble();
+                    if (!Validacao.validarPeso(peso2)) {
+                        System.err.println("Digite um valor");
+                    }
                     break;
 
 
@@ -96,11 +102,12 @@ public class Main {
                 }
             }
 
-            Calculo calc = new Calculo();
-            Resultado resultado = new Resultado();
-            System.out.println("Média " + resultado.mostrarResultado(calc.calcularMediaPonderada(nota1, nota2, peso1, peso2)));
+            double mediaPonderada = Calculo.calcularMediaPonderada(nota1, nota2, peso1, peso2);
+            Resultado.mostrarResultado(mediaPonderada);
+            EntradaSaida.mostrarMedia(mediaPonderada);
 
         }
+        sc.close();
 
 
     }
