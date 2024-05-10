@@ -6,12 +6,15 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         double valorSalarioAtual, valorEmprestimo;
 
+        Validacao validacao = new Validacao();
+
+
         while (true) {
             try {
                 System.out.println("Digite o valor do seu salário atual: ");
                 valorSalarioAtual = sc.nextDouble();
 
-                if (!Validacao.validarEntradaSalario(valorSalarioAtual)) {
+                if (!validacao.validarEntradaSalario(valorSalarioAtual)) {
                     continue;
                 }
 

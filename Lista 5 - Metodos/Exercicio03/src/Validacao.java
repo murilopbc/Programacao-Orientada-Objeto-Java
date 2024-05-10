@@ -1,5 +1,9 @@
 public class Validacao {
-    public static boolean validarEntradaSalario(double salario) {
+
+
+    // Função 'validarEntradaSalario' não é static, então no Main eu tenho que instanciar a classe 'Validação'
+
+    public boolean validarEntradaSalario(double salario) {
         return salario > 0;
     }
 
