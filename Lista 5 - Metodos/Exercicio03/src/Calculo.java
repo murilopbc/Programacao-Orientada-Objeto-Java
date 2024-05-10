@@ -1,8 +1,9 @@
 public class Calculo {
-    public static double valorTotalEmprestimo(double valorEmprestimo){
+    public static double valorTotalEmprestimo(double valorEmprestimo) {
         return valorEmprestimo * 1.35;
     }
-    public static double valorParcelado(double valorEmprestimo){
+
+    public static double valorParcelado(double valorEmprestimo) {
 
         double valorTotalEmprestimo = valorTotalEmprestimo(valorEmprestimo);
 
