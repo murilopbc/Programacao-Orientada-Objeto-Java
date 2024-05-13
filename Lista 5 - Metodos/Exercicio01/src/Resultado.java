@@ -4,6 +4,7 @@ public class Resultado {
 
         if (media >= 7) {
             System.out.println("Aprovado");
+
         } else {
             System.out.println("Reprovado");
         }
