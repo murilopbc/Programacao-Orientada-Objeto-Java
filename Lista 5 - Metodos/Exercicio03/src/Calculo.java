@@ -1,12 +1,15 @@
 public class Calculo {
-    public static double valorTotalEmprestimo(double valorEmprestimo) {
-        return valorEmprestimo * 1.35;
+
+    static double valorEmprestimo, calcularEmprestimo;
+    public static void valorTotalEmprestimo() {
+        calcularEmprestimo = valorEmprestimo * 1.35;
+        System.out.println("Valor total a ser pago pelo empréstimo: " + calcularEmprestimo);
+
     }
 
-    public static double valorParcelado(double valorEmprestimo) {
+    public static void valorParcelado() {
 
-        double valorTotalEmprestimo = valorTotalEmprestimo(valorEmprestimo);
-
-        return valorTotalEmprestimo / 24;
+        double valorParcela =  calcularEmprestimo / 24;
+        System.out.println("Valor de cada parcela: " + valorParcela);
     }
 }
