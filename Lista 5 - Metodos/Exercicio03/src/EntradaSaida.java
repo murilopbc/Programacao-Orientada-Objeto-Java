@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 public class EntradaSaida {
     public static void Principal() {
+
         Scanner sc = new Scanner(System.in);
+
         double valorSalarioAtual, valorEmprestimo;
 
         Validacao validacao = new Validacao();
@@ -29,11 +31,12 @@ public class EntradaSaida {
             try {
                 System.out.println("Digite o valor do empréstimo:");
                 valorEmprestimo = sc.nextDouble();
+                double parc = Calculo.valorParcelado(Calculo.valorTotalEmprestimo(valorEmprestimo));
                 if (!Validacao.validarEntradaEmprestimo(valorEmprestimo)) {
                     System.err.println("Valor do empréstimo tem que ser maior que 0 e até R$ 200.000,00");
                     continue;
                 }
-                if (!Validacao.validarEmprestimo(valorEmprestimo, valorSalarioAtual)) {
+                if (!Validacao.validarEmprestimo(valorSalarioAtual, parc)) {
                     System.err.println("Valor Inválido. Valor da parcela é maior que 15% do salário");
                     continue;
                 }
@@ -45,8 +48,6 @@ public class EntradaSaida {
             }
         }
 
-        Calculo.valorTotalEmprestimo();
-        Calculo.valorParcelado();
 
         sc.close();
 
