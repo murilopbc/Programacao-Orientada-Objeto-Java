@@ -12,6 +12,8 @@ public class EntradaSaida {
                 System.out.println("Informe o salário bruto: ");
                 salarioBruto = sc.nextDouble();
 
+                Calculo.salarioBruto = salarioBruto;
+
                 if (!Validacao.validarSalario(salarioBruto)) {
                     System.err.println("Salário Inválido. O salário deve ser entre R$ 500 a R$ 30.000");
                     continue;
@@ -25,9 +27,9 @@ public class EntradaSaida {
 
         }
 
-        Calculo.calcularINSS(salarioBruto);
-        Calculo.calcularIRPF(salarioBruto);
-        Calculo.calcularPlanoSaude(salarioBruto);
+        Calculo.calcularINSS();
+        Calculo.calcularIRPF();
+        Calculo.calcularPlanoSaude();
 
         while (true) {
             try {
@@ -37,7 +39,7 @@ public class EntradaSaida {
                     System.err.println("A quantidade de hora extra deve ser nula ou positiva!");
                     continue;
                 }
-                Calculo.calcularHorasExtras(salarioBruto, horasExtras);
+                Calculo.calcularHorasExtras(horasExtras);
                 Calculo.calcularSalarioLiquido();
                 break;
 
